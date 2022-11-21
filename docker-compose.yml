@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+    tracer:
+      build: .
+      restart: always
+      volumes:
+        - ./:/usr/src/app
+      ports:
+        - 80:80
+      command: "gunicorn --chdir /usr/src/app --access-logfile - --error-logfile - --bind :80 tracer.wsgi:application"

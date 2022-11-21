@@ -3,3 +3,4 @@ assets
 maps
 static
 .env
+db.sqlite3
